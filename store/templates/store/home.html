@@ -1,0 +1,33 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="container1">
+    <Div class=" texts">
+       
+        <h1>Famous & Quality Filipino  <span style="color: brown;">Dishes</span></h1>
+        <p>Welcome To Tagpuan Express your food buddy<p> Open Every <span style="color: yellow;">Mondays</span> to <span style="color: yellow;">Saturdays</span></p>
+
+        <button id="btn"><a href="{% url 'store' %}" style="color: black;"> View Menu</a></button>
+    </Div>   <Div class="plate">
+        <img src="{% static 'images/plate.png'%}" id="plate">
+    </Div>
+
+</div>
+<br><br>
+	<script>
+		const spinImage = document.getElementById('plate');
+
+let rotation = 0;
+
+
+function spin() {
+    rotation += .1;
+    spinImage.style.transform = `rotate(${rotation}deg)`;
+    requestAnimationFrame(spin);
+}
+
+spin();
+	</script>
+	
+
+{% endblock content %}
